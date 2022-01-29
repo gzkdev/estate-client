@@ -47,5 +47,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: clamp(1.4rem, 4vw + 1rem, 36px);
         line-height: 1.2;
         margin-bottom: 16px;
-      }
+    }
+
+    input{
+        height: 48px;
+    }
+
 `
