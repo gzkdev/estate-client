@@ -1,7 +1,7 @@
 import { FaEnvelope } from "react-icons/fa";
 import styled from "styled-components";
 
-const FloatingButton = styled.button`
+const FloatingButton = styled.a`
   position: fixed;
   bottom: 24px;
   right: 5vmin;
@@ -19,7 +19,7 @@ const FloatingButton = styled.button`
 
 function FloatingFixedButton() {
   return (
-    <FloatingButton>
+    <FloatingButton href="/#">
       <FaEnvelope />
     </FloatingButton>
   );
