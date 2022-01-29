@@ -6,13 +6,14 @@ const FixedMenuStyled = styled.div`
   position: fixed;
   top: 72px;
   left: 0;
-  width: 90%;
+  width: 95%;
   left: 50%;
   transform: translate(-50%, 0);
   padding: 40px 24px;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 999;
 
   &[data-toggle="show"] {
     display: block;

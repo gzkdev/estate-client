@@ -57,4 +57,19 @@ export const GlobalStyle = createGlobalStyle`
         height: 48px;
     }
 
+    .logo{
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.9rem;
+
+        & > span{
+            display: block;
+            line-height: 1;
+
+            &:nth-child(2){
+                font-weight: bold;
+            }
+        }
+    }
+
 `
