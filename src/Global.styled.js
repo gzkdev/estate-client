@@ -39,6 +39,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     }
 
+    /* section:not(:first-child){
+        padding: 15vh 0px 10vh; ;
+    } */
+
     .section-header{
         max-width: 540px;
     }
