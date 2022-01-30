@@ -1,5 +1,7 @@
 import { ContainerStyled } from "./styled/Container.styled";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ClientData } from "../ClientData";
 
 const sizes = {
   tablet: "768px",
@@ -28,11 +30,42 @@ const CategoriesSectionStyled = styled.section`
       width: 0;
     }
 
-    & > div {
-      min-width: 260px;
-      height: 360px;
-      background: #555;
-      border-radius: 4px;
+    & a {
+      text-decoration: none;
+      color: inherit;
+
+      & > div {
+        position: relative;
+        min-width: 260px;
+        height: 360px;
+        color: #fff;
+        border-radius: 4px;
+        padding: 24px 16px;
+        overflow: hidden;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
+          z-index: -1;
+        }
+
+        & > img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          inset: 0;
+          object-fit: cover;
+          z-index: -1;
+        }
+
+        & span {
+          font-weight: bold;
+          line-height: 1;
+          display: block;
+        }
+      }
     }
   }
 
@@ -58,13 +91,15 @@ function CategoriesSection() {
         </div>
       </ContainerStyled>
       <div className="categories-carousel">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        {ClientData.map((item) => (
+          <Link key={item.id} to="/#">
+            <div>
+              <img src={item.imgURL} alt="" />
+              <small>{item.tag}</small>
+              <span>{item.type}</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </CategoriesSectionStyled>
   );

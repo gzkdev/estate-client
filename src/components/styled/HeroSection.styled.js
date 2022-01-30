@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-import heroBg from "./herobg.jpg"
+import heroBg from "./assets/images/herobg.jpg"
 
 export const HeroSectionStyled = styled.section`
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.55)),
     url(${heroBg}) center no-repeat;
     background-size: cover;
     color: #fff;
