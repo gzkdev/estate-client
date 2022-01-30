@@ -7,7 +7,7 @@ const FloatingButton = styled.a`
   right: 5vmin;
   height: 56px;
   width: 56px;
-  background: #242424;
+  background: violet;
   border-radius: 50%;
   display: flex;
   align-items: center;

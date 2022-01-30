@@ -1,6 +1,27 @@
 import { createGlobalStyle } from "styled-components"
 
+import InterRegular from "./assets/fonts/Inter-Regular.woff"
+import InterSemiBold from "./assets/fonts/Inter-SemiBold.woff"
+import InterBold from "./assets/fonts/Inter-Bold.woff"
+
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: Inter;
+        src: url(${InterRegular}) format('woff');
+    }
+
+    @font-face {
+        font-family: Inter;
+        src: url(${InterSemiBold}) format('woff');
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: Inter;
+        src: url(${InterBold}) format('woff');
+        font-weight: bold;
+    }
+
     *,
     *::before,
     *::after {
@@ -34,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
     font-size: 1.125rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     line-height: 1.5;
     }
@@ -54,7 +75,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     input{
+        padding: 0px 16px ;
+    }
+
+    input, button{
         height: 48px;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 0.96rem;
     }
 
     .logo{

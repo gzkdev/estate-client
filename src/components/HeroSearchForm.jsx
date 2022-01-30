@@ -17,6 +17,17 @@ const Form = styled.form`
     grid-template-columns: auto 48px;
     gap: 2px;
     padding: 16px 0px;
+
+    & input {
+      border-radius: 4px;
+    }
+
+    & button {
+      background: violet;
+      color: inherit;
+      cursor: pointer;
+      border-radius: 4px;
+    }
   }
 `;
 
@@ -25,7 +36,7 @@ function HeroSearchForm() {
     <Form autoComplete="off" className="hero-form">
       <label htmlFor="search">Search for homes</label>
       <div className="hero-form-container">
-        <input type="search" />
+        <input placeholder="Search properties" type="search" />
         <button type="submit">
           <FaSearch />
         </button>
