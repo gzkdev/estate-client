@@ -15,7 +15,8 @@ const devices = {
 const FooterStyled = styled.footer`
   width: 100%;
   padding: 64px 0px;
-  background: #555;
+  background: #050505;
+  color: #d3d3d3;
 
   & .footer-text-container {
     max-width: 360px;
