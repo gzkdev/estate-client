@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import BookMarkButton from "./BookMarkButton";
 
 const FeaturedItemStyled = styled.div`
   position: relative;
@@ -7,20 +8,6 @@ const FeaturedItemStyled = styled.div`
   border-radius: 4px;
   outline: 1px solid #ebebeb;
   overflow: hidden;
-
-  & .bookmark-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    z-index: 1;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
 
   & a {
     text-decoration: none;
@@ -35,6 +22,8 @@ const FeaturedItemStyled = styled.div`
 
     & > img {
       position: absolute;
+      width: 100%;
+      height: 100%;
       inset: 0;
       object-fit: cover;
     }
@@ -78,20 +67,21 @@ const FeaturedItemStyled = styled.div`
   }
 `;
 
-function FeaturedItem() {
+function FeaturedItem({ img, title, price, owner }) {
   return (
     <FeaturedItemStyled>
       <Link to="/">
-        <button className="bookmark-btn"></button>
-        <div className="featured-item-top"></div>
+        <BookMarkButton />
+        <div className="featured-item-top">
+          <img src={img} alt="" />
+        </div>
         <div className="featured-item-base">
-          <h4>6-bedroom Bungalow house</h4>
+          <h4>{title}</h4>
           <small>Starting from</small>
-          <span>$2,400</span>
-
+          <span>${price}</span>
           <div className="featured-item-owner-profile">
             <div className="owner-photo-box"></div>
-            <small>Ejike Clifford</small>
+            <small>{owner}</small>
           </div>
         </div>
       </Link>

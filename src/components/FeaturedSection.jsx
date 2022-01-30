@@ -2,6 +2,8 @@ import styled from "styled-components";
 import FeaturedItem from "./FeaturedItem";
 import { ContainerStyled } from "./styled/Container.styled";
 
+import { ClientData } from "../ClientData";
+
 const sizes = {
   semiTablet: "500px",
   laptop: "1200px",
@@ -36,8 +38,6 @@ const FeaturedSectionStyled = styled.section`
 `;
 
 function FeaturedSection() {
-  const arr = [1, 2, 3, 4];
-
   return (
     <FeaturedSectionStyled>
       <ContainerStyled>
@@ -46,8 +46,14 @@ function FeaturedSection() {
           <p>Check out the latest comfortable homes that we have now</p>
         </div>
         <div className="featured-section-container">
-          {arr.map((item, index) => (
-            <FeaturedItem data-reference={item} key={index} />
+          {ClientData.map((item) => (
+            <FeaturedItem
+              img={item.imgURL}
+              title={item.title}
+              price={item.price}
+              owner={item.owner}
+              key={item.id}
+            />
           ))}
         </div>
       </ContainerStyled>
